@@ -15,15 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // Create virtual environment, install pytest, and run tests
-                sh '''
-                cd $WORKSPACE
-                python3 -m venv venv
-               . venv/bin/activate
-                pip install --upgrade pip
-                pip install pytest
-                python -m pytest
-                '''
+                sh 'python3 -m pytest'
             }
          }
      }
